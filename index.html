@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Festin Acasă - Brutărie, Patiserie, Cofetărie</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap&subset=latin-ext" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            colors: {
+              'festin-gold': '#c59d5f', /* Updated to requested gold tone */
+              'festin-dark': '#2C241B',
+              'festin-cream': '#F9F5F0',
+              'festin-accent': '#C17C74',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              slideInRight: {
+                '0%': { opacity: '0', transform: 'translateX(50px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              }
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+              'slide-in-right': 'slideInRight 0.8s ease-out forwards',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* GLOBAL FIX: Remove Horizontal Scrollbar */
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+        scroll-behavior: smooth;
+        background-color: #F9F5F0;
+      }
+      
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+
+      /* Animation classes utility */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom About Cards Design */
+      .about-card {
+        background: #ffffff;
+        padding: 40px 30px;
+        text-align: center;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        height: 100%;
+        border-bottom: 3px solid transparent;
+      }
+      .about-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        border-bottom-color: #c59d5f;
+      }
+
+      /* Typography Normalization for Values List */
+      .about-card .values-list {
+          font-weight: normal; 
+          color: #4b5563; /* Tailwind gray-600 equivalent */
+          line-height: 1.625;
+          margin-bottom: 0;
+      }
+
+      /* Manifesto Section Styles */
+      .gold-divider {
+          width: 60px;
+          height: 3px;
+          background-color: #c59d5f;
+          margin: 0 auto 25px auto;
+      }
+
+      .manifesto-text {
+          font-style: italic;
+          font-size: 1.1rem;
+          color: #555;
+          line-height: 1.8;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "lucide-react": "https://esm.sh/lucide-react@0.344.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
